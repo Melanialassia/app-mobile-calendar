@@ -21,7 +21,7 @@ npx expo start
 
 Escanear el QR con Expo Go.
 
-🧭 Características Principales
+## 🧭 Características Principales
 
 ✅ Navegación mediante Stack Navigation
 
