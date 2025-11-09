@@ -11,14 +11,19 @@ La aplicación está desarrollada en **React Native + Expo** utilizando **compon
 
 ## 🚀 Instalación y Ejecución
 
-git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo
+```
+git clone https://github.com/Melanialassia/app-mobile-calendar.git
+
+cd app-mobile-calendar
+
 npm install
+
 npx expo start
 
 Escanear el QR con Expo Go.
+```
 
-🧭 Características Principales
+## 🧭 Características Principales
 
 ✅ Navegación mediante Stack Navigation
 
@@ -40,18 +45,25 @@ Escanear el QR con Expo Go.
 ## 🧱 Dependencias Principales
 
 Zustand ===> Manejo de estado global simple y escalable
+
 date-fns-tz ===> Manejo y formateo de fechas por zona horaria
+
 react-native-calendars ===> Renderización del calendario para seleccionar días
+
 @react-navigation/native + stack Navegación entre pantallas
+
 AsyncStorage ===> Persistencia local
+
 react-native-safe-area-context ===> Asegura que la UI no quede oculta detrás de la barra de estado en iOS/Android.
 
-Instalación:
+**Instalación:**
+```
 npm install zustand date-fns-tz @react-native-async-storage/async-storage react-native-calendars
-
+```
 
 ## 📂 Estructura de Carpetas
 
+```
 src/
 ├─ app/                          # Sistema de rutas (Expo Router)
 │  ├─ (tabs)/                    # Layout principal con Tabs
@@ -72,7 +84,7 @@ src/
 ├─ constants/                    # Constantes generales (filtros, colores, etc.)
 │
 └─ types/                        # Tipos globales de TypeScript
-
+```
 
 ## 🤖 Uso de IA
 
