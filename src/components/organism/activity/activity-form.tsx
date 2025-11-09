@@ -28,7 +28,7 @@ import { validateActivityForm } from "./validations";
 
 export const ActivityForm = () => {
   const router = useRouter();
-  const { selected_task, setSelectedTask, setAddTask, setEditTask } =
+  const { selected_task, setSelectedTask, setAddTask, setEditTask, tasks } =
     useStore();
   const insets = useSafeAreaInsets();
   const [errors, setErrors] = useState<ActivityFormErrors>({});
@@ -73,29 +73,39 @@ export const ActivityForm = () => {
           "HH:mm"
         ),
       };
-      console.log("NEW",NEW_OBJECT)
-
-      if (selected_task && selected_task?.id) {
-        setEditTask({
-          data: NEW_OBJECT,
+      const isDuplicate = tasks?.some(
+        (task) =>
+          task.date === NEW_OBJECT.date &&
+          task.hour === NEW_OBJECT.hour &&
+          task.id !== form.id
+      );
+      if (isDuplicate) {
+        return Toast.show({
+          type: "error",
+          text1: "Ya existe un evento en esa fecha y hora",
+          text2:"Elija otra fecha o puede editar el evento ya existente"
         });
-        setSelectedTask({ data: null });
-        Toast.show({
-          type: "success",
-          text1: "Actividad modificada con exito",
-        });
-        setErrors({});
       } else {
-        setAddTask({
-          data: NEW_OBJECT,
-        });
-        Toast.show({
-          type: "success",
-          text1: "Actividad creada con exito",
-        });
-        setErrors({});
+        if (selected_task && selected_task?.id) {
+          setEditTask({
+            data: NEW_OBJECT,
+          });
+          Toast.show({
+            type: "success",
+            text1: "Actividad modificada con exito",
+          });
+          setErrors({});
+        } else {
+          setAddTask({
+            data: NEW_OBJECT,
+          });
+          Toast.show({
+            type: "success",
+            text1: "Actividad creada con exito",
+          });
+          setErrors({});
+        }
       }
-      router.push("/");
     }
   };
 

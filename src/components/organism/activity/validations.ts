@@ -16,8 +16,8 @@ export const validateActivityForm = (
 
   if (!form.title || form.title.trim().length === 0) {
     errors.title = "El título es obligatorio";
-  } else if (form.title.length > 20) {
-    errors.title = "El título no puede superar los 20 caracteres";
+  } else if (form.title.length > 50) {
+    errors.title = "El título no puede superar los 50 caracteres";
   }
 
   if (!form.description || form.description.trim().length === 0) {
