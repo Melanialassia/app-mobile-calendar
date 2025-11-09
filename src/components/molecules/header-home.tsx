@@ -5,7 +5,7 @@ import { FILTERS_BADGE } from "@/constants";
 import { useStore } from "@/store";
 
 export const HeaderHome = () => {
-  const { filter_urgency, setFilterUrgency } = useStore();
+  const { filter_urgency, setFilterUrgency, selected_day } = useStore();
   const insets = useSafeAreaInsets();
 
   return (
@@ -17,6 +17,7 @@ export const HeaderHome = () => {
         },
       ]}
     >
+      <ThemedText type="title">{selected_day}</ThemedText>
       <ThemedView style={styles.containerLabel}>
         {FILTERS_BADGE?.map((item) => {
           const IS_SELECTED = filter_urgency === item.label;
@@ -56,6 +57,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 6,
     gap: 10,
+    alignItems: "center",
   },
   containerLabel: {
     flexDirection: "row",
@@ -67,9 +69,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 12,
     borderRadius: 12,
-
     borderWidth: 1,
-
     alignItems: "center",
   },
   label: {
