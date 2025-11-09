@@ -1,8 +1,9 @@
 import { create } from "zustand";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createJSONStorage, persist } from "zustand/middleware";
-import { TASK_LIST, TaskT } from "@/constants";
+import { TASK_LIST } from "@/constants";
 import { formatDate } from "@/utils";
+import { TaskT } from "@/types";
 
 type Actions = {
   setSelectedDay: ({ day }: { day: string }) => void;

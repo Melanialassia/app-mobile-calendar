@@ -1,11 +1,14 @@
-export type TaskT = {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  hour: string;
-  urgency: "Alta" | "Media" | "Baja";
-};
+import { TaskT } from "@/types";
+
+export const DAYS_OF_WEEK: string[] = [
+  "LU",
+  "MA",
+  "MI",
+  "JU",
+  "VI",
+  "SA",
+  "DO",
+];
 
 export const TASK_LIST: TaskT[] = [
   {

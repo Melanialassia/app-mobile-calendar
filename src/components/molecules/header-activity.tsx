@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ThemedText, ThemedView } from "@/components/atoms";
 import { getUrgencyBadgeStyle } from "@/utils";
-import { TaskT } from "@/constants";
+import { TaskT } from "@/types";
 
 
 export const HeaderActivity  = ({ data }: { data: TaskT | null }) => {

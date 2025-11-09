@@ -5,7 +5,6 @@ import { ThemedText, ThemedView } from "@/components/atoms";
 import { useThemeColor } from "@/hooks";
 import { useStore } from "@/store";
 
-
 export const CustomeCalendar = ({
   setOpen,
 }: {
@@ -21,6 +20,7 @@ export const CustomeCalendar = ({
 
   return (
     <Calendar
+      firstDay={1}
       current={selected_day}
       onDayPress={(day) => {
         setSelectedDay({ day: day.dateString });

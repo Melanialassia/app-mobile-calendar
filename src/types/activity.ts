@@ -16,3 +16,12 @@ export  type ActivityFormT = {
   hour: Date;
   urgency: "Alta" | "Media" | "Baja";
 };
+
+export type TaskT = {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  hour: string;
+  urgency: "Alta" | "Media" | "Baja";
+};
