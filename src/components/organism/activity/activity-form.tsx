@@ -65,7 +65,7 @@ export const ActivityForm = () => {
       const NEW_OBJECT = {
         ...form,
         date: format(
-          toZonedTime(form.hour, "America/Argentina/Buenos_Aires"),
+          toZonedTime(form.date, "America/Argentina/Buenos_Aires"),
           "yyyy-MM-dd"
         ),
         hour: format(
@@ -73,6 +73,7 @@ export const ActivityForm = () => {
           "HH:mm"
         ),
       };
+      console.log("NEW",NEW_OBJECT)
 
       if (selected_task && selected_task?.id) {
         setEditTask({

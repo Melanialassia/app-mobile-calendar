@@ -18,15 +18,16 @@ export const HomeView = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const FILTER_DATA = tasks
     ?.filter((t) => t.date === selected_day)
-    .filter((t) =>
+    ?.filter((t) =>
       filter_urgency === "Todas" ? true : t.urgency === filter_urgency
     );
+  const SORT_DATA = FILTER_DATA?.sort((a, b) => a.hour.localeCompare(b.hour));
 
   return (
     <ThemedView style={[styles.container]}>
       <FlatList
         contentContainerStyle={styles.listCardContetn}
-        data={FILTER_DATA}
+        data={SORT_DATA}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => {
           const BADGET = getUrgencyBadgeStyle(item.urgency);
