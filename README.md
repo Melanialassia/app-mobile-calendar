@@ -1,50 +1,79 @@
-# Welcome to your Expo app 👋
+# 📌 Nombre del Proyecto
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+DailyTasks - Gestor de actividades diarias
 
-## Get started
 
-1. Install dependencies
+## 📝 Descripción
 
-   ```bash
-   npm install
-   ```
+DailyTasks es una aplicación móvil que permite gestionar actividades diarias. Se pueden crear, editar y eliminar tareas, organizarlas por fecha y clasificarlas según nivel de urgencia.  
+La aplicación está desarrollada en **React Native + Expo** utilizando **componentes funcionales con TypeScript**, navegación, formularios con validaciones y manejo de estado global.
 
-2. Start the app
 
-   ```bash
-   npx expo start
-   ```
+## 🚀 Instalación y Ejecución
 
-In the output, you'll find options to open the app in a
+git clone https://github.com/tu-usuario/tu-repo.git
+cd tu-repo
+npm install
+npx expo start
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Escanear el QR con Expo Go.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+🧭 Características Principales
 
-## Get a fresh project
+✅ Navegación mediante Stack Navigation
 
-When you're ready, run:
+📋 Listado dinámico con FlatList
 
-```bash
-npm run reset-project
-```
+✏️ Alta, edición y eliminación de tareas (CRUD completo)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+🧮 Validaciones en formularios con feedback visual (Toasts)
 
-## Learn more
+🔥 Filtrado por nivel de urgencia (Bajo / Medio / Alto)
 
-To learn more about developing your project with Expo, look at the following resources:
+💾 Persistencia local con AsyncStorage (opcional, mejora agregada)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+🧠 Estado global administrado con Zustand
 
-## Join the community
+📅 Selección de fecha con react-native-calendars
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🧱 Dependencias Principales
+
+Zustand ===> Manejo de estado global simple y escalable
+date-fns-tz ===> Manejo y formateo de fechas por zona horaria
+react-native-calendars ===> Renderización del calendario para seleccionar días
+@react-navigation/native + stack Navegación entre pantallas
+AsyncStorage ===> Persistencia local
+react-native-safe-area-context ===> Asegura que la UI no quede oculta detrás de la barra de estado en iOS/Android.
+
+Instalación:
+npm install zustand date-fns-tz @react-native-async-storage/async-storage react-native-calendars
+
+
+## 📂 Estructura de Carpetas
+
+src/
+├─ app/                          # Sistema de rutas (Expo Router)
+│  ├─ (tabs)/                    # Layout principal con Tabs
+│  │  └─ _layout.tsx             # Layout de navegación
+│  │  └─ index.tsx               # Pantalla Home
+│  ├─ add-activity.tsx           # Pantalla para crear / editar actividades
+│  └─ activity.tsx               # Pantalla de detalle de actividad
+│
+├─ components/
+│  ├─ atoms/                     # Elementos UI básicos 
+│  ├─ molecules/                 # Componentes compuestos 
+│  └─ organisms/                 # Bloques completos de interfaz 
+│
+├─ store/                        # Manejo de estado global (Zustand)
+│
+├─ utils/                        # Funciones auxiliares (formateo de fechas, validaciones, etc.)
+│
+├─ constants/                    # Constantes generales (filtros, colores, etc.)
+│
+└─ types/                        # Tipos globales de TypeScript
+
+
+## 🤖 Uso de IA
+
+Se utilizó inteligencia artificial (ChatGPT y/o GitHub Copilot) únicamente como asistencia durante el desarrollo, para resolver dudas específicas y ayudar en la solución de bugs encontrados en el proceso. Todas las decisiones técnicas, la estructura del proyecto y la implementación final del código fueron realizadas y comprendidas.
