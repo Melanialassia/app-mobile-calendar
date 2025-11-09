@@ -12,8 +12,11 @@ La aplicación está desarrollada en **React Native + Expo** utilizando **compon
 ## 🚀 Instalación y Ejecución
 
 git clone https://github.com/Melanialassia/app-mobile-calendar.git
+
 cd app-mobile-calendar
+
 npm install
+
 npx expo start
 
 Escanear el QR con Expo Go.
