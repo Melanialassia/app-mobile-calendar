@@ -11,8 +11,8 @@ La aplicación está desarrollada en **React Native + Expo** utilizando **compon
 
 ## 🚀 Instalación y Ejecución
 
-git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo
+git clone https://github.com/Melanialassia/app-mobile-calendar.git
+cd app-mobile-calendar
 npm install
 npx expo start
 
